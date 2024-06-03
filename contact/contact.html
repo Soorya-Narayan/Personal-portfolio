@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="icon" href="../images/customer-service.png" type="image/x-icon">
+  <link rel="stylesheet" href="contact.css" />
+  <title>Contact | Surya</title>
+</head>
+<body>
+    <nav>
+        <div class="nav__content">
+          <div class="logo"><a href="../index.html" id="logoLink">Surya Narayan</a></div>
+          <h1 class="title">Contact</h1> <!-- Moved Contact header here -->
+          <label for="check" class="checkbox">
+            <i class="ri-menu-line"></i>
+          </label>
+          <input type="checkbox" name="check" id="check" />
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../gallery/gallery.html">Journal</a></li>
+            <li><a href="../works/works.html">Works</a></li>
+          </ul>
+        </div>
+      </nav>
+  <section class="section">
+    <div class="section__container">
+      <div class="content">
+        <h1 class="title">Contact Me</h1>
+        <p class="description">
+          <h4>Feel free to get in touch with me using the information below or by filling out the contact form.</h4>
+        </p>
+        <div class="contact-info">
+            <div class="contact-item">
+              <img src="../images/gmail.png" alt="Email Icon">
+              <p>Email: suryanarayan6625@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <img src="../images/telephone.png" alt="Phone Icon">
+              <p>Phone: 8594077675</p>
+            </div>
+            <div class="contact-item">
+              <img src="../images/location-pin.png" alt="Address Icon">
+              <p>Address: Ernakulam, Kerala, India</p>
+            </div>
+          </div>          
+        <form action="https://api.web3forms.com/submit" method="post" class="contact-form">
+          <input type="hidden" name="access_key" value="3bb4c590-f2aa-4b79-a395-22257dc1b40f">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

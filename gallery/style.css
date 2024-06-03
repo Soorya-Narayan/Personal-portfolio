@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #183D3D;
+  --primary-color-dark: #93B1A6;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #000000;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white for better visibility */
+  scrollbar-width: thin;
+  scrollbar-color: #cfc9c5 #383838;
+}
+
+h1 {
+  color: coral;
+}
+
+.grid-container {
+  columns: 5 200px;
+  column-gap: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.grid-container div {
+  position: relative; /* Add relative positioning */
+  width: 150px;
+  margin: 0 1.5rem 1.5rem 0;
+  display: inline-block;
+  width: 100%;
+  border: solid 2px black;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.grid-container div p {
+  position: absolute; /* Position the paragraph absolutely */
+  top: 50%; /* Place it at the vertical center */
+  left: 50%; /* Place it at the horizontal center */
+  transform: translate(-50%, -50%); /* Center it perfectly */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-style: italic;
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.3s ease-in-out; /* Add transition effect */
+}
+
+.grid-container div:hover p {
+  opacity: 1; /* Show the text on hover */
+}
+
+.grid-container div img {
+  width: 100%;
+  filter: grayscale(0%);
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-container div:hover img {
+  filter: grayscale(0);
+}
+
+.grid-container div:hover {
+  border-color: rgb(255, 255, 255);
+}
+
+/* Custom scrollbar styles */
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #383838;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #cfc9c5;
+  border: 1px solid #1a1a1a;
+  border-radius: 1px;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.journal-header {
+  text-align: center;
+  flex-grow: 1; /* Takes up remaining space in the navbar */
+}
+
+.journal-header h1 {
+  margin: 0;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: var(--extra-light);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+}
