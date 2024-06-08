@@ -22,6 +22,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--extra-light); /* Ensure body has the background color */
 }
 
 nav {
@@ -43,19 +44,19 @@ nav {
 }
 
 nav .logo a {
-    font-size: 1.5rem;
-    font-weight: 600;
-    transition: 0.3s;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  nav .logo a:hover {
-    color: var(--primary-color-dark);
-  }
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
 
 nav .checkbox {
   display: none;
@@ -79,26 +80,26 @@ ul {
 }
 
 ul li a {
-    padding: 0.5rem 1rem;
-    border: 2px solid transparent;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  ul li a:hover {
-    border-top-color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
-    color: var(--secondary-color);
-  }
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
 
 .section {
-  background-color: var(--extra-light);
+  background-color: var(--extra-light); /* Set background color for the section */
 }
 
 .section__container {
@@ -109,6 +110,7 @@ ul li a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
+  background-color: var(--extra-light); /* Ensure container has the background color */
 }
 
 .content {
@@ -125,20 +127,20 @@ ul li a {
 }
 
 .title {
-    font-size: 2.5rem;
-    font-weight: 400;
-    line-height: 3rem;
-    margin-bottom: 1rem;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  .title span {
-    font-weight: 600;
-  }
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title span {
+  font-weight: 600;
+}
 
 .description {
   line-height: 1.5rem;
@@ -187,10 +189,10 @@ ul li a {
 }
 
 .image img {
-    width: 30rem; /* or any fixed value */
-    height: 30rem; /* same as width */
-    object-fit: cover;
-    border-radius: 50%;
+  width: 30rem; /* or any fixed value */
+  height: 30rem; /* same as width */
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @media (width < 750px) {
@@ -204,7 +206,7 @@ ul li a {
     height: calc(100vh - 85px);
     left: -100%;
     top: 85px;
-    background-color: var(--extra-light);
+    background-color: var(--extra-light); /* Set background color for mobile menu */
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
@@ -222,6 +224,7 @@ ul li a {
     padding: 10rem 1rem 5rem 1rem;
     text-align: center;
     grid-template-columns: repeat(1, 1fr);
+    background-color: var(--extra-light); /* Ensure container has the background color */
   }
 
   .image {
