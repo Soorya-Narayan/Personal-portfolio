@@ -5,7 +5,7 @@
 A sophisticated, multi-page, and responsive portfolio design, crafted with clean HTML, CSS, and JavaScript
 
 ## Preview
-https://github.com/Soorya-Narayan/Personal-portfolio-Using-HTML-CSS-JS/assets/118114664/ddb00fbb-5ebe-4daf-9363-2e10ea13c9b4
+
 ## Demo
 
 
