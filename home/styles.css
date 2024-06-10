@@ -6,23 +6,30 @@
   --secondary-color: #ca8a04;
   --text-dark: #1f2937;
   --text-light: #6b7280;
-  --extra-light: #000000;
+  --background-light: #ffffff;
+  --background-dark: #000000;
   --max-width: 1200px;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+[data-theme="dark"] {
+  --background-color: var(--background-dark);
+  --text-color: var(--background-light);
+  --nav-background-color: var(--background-dark);
+  --primary-color: #ffffff;
+  --secondary-color: #ca8a04;
 }
 
-a {
-  text-decoration: none;
+[data-theme="light"] {
+  --background-color: var(--background-light);
+  --text-color: var(--background-dark);
+  --nav-background-color: var(--background-light);
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--extra-light); /* Ensure body has the background color */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav {
@@ -30,8 +37,9 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color: var(--nav-background-color);
   z-index: 99;
+  transition: background-color 0.3s;
 }
 
 .nav__content {
@@ -65,6 +73,7 @@ nav .checkbox {
 nav input {
   display: none;
 }
+
 nav .checkbox i {
   font-size: 2rem;
   color: var(--primary-color);
@@ -99,7 +108,7 @@ ul li a:hover {
 }
 
 .section {
-  background-color: var(--extra-light); /* Set background color for the section */
+  background-color: var(--background-color);
 }
 
 .section__container {
@@ -110,7 +119,6 @@ ul li a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
-  background-color: var(--extra-light); /* Ensure container has the background color */
 }
 
 .content {
@@ -166,7 +174,16 @@ ul li a:hover {
 }
 
 .hire__me {
-  background-color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   color: #ffffff;
 }
 
@@ -189,13 +206,13 @@ ul li a:hover {
 }
 
 .image img {
-  width: 30rem; /* or any fixed value */
-  height: 30rem; /* same as width */
+  width: 30rem;
+  height: 30rem;
   object-fit: cover;
   border-radius: 50%;
 }
 
-@media (width < 750px) {
+@media (max-width: 750px) {
   nav .checkbox {
     display: block;
   }
@@ -206,7 +223,7 @@ ul li a:hover {
     height: calc(100vh - 85px);
     left: -100%;
     top: 85px;
-    background-color: var(--extra-light); /* Set background color for mobile menu */
+    background-color: var(--background-color);
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
@@ -224,7 +241,6 @@ ul li a:hover {
     padding: 10rem 1rem 5rem 1rem;
     text-align: center;
     grid-template-columns: repeat(1, 1fr);
-    background-color: var(--extra-light); /* Ensure container has the background color */
   }
 
   .image {
@@ -234,4 +250,32 @@ ul li a:hover {
   .action__btns {
     margin: auto;
   }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: var(--background-dark);
+  --text-color: var(--text-color-light);
+  --nav-background-color: var(--background-dark);
+  --primary-color: #ffffff;
+  --secondary-color: #ca8a04;
+}
+
+/* Theme Toggle Button Styles */
+nav .theme-toggle {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav .theme-toggle:hover {
+  color: var(--primary-color-dark);
 }
