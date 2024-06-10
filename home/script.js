@@ -42,3 +42,38 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = '../contact/contact.html';
   });
 });
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the contact button element
+  var contactButton = document.querySelector('.hire__me');
+
+  // Add click event listener to the contact button
+  contactButton.addEventListener('click', function() {
+    // Redirect the user to contact.html
+    window.location.href = '../contact/contact.html';
+  });
+
+  // Get the theme toggle button element
+  var themeToggleButton = document.getElementById('theme-toggle');
+
+  // Add click event listener to the theme toggle button
+  themeToggleButton.addEventListener('click', function() {
+    // Toggle the dark-mode class on the body
+    document.body.classList.toggle('dark-mode');
+
+    // Toggle the dark-mode class on the nav
+    document.querySelector('nav').classList.toggle('dark-mode');
+
+    // Toggle the dark-mode class on the section
+    document.querySelector('.section').classList.toggle('dark-mode');
+
+    // Change the icon based on the current mode
+    if (document.body.classList.contains('dark-mode')) {
+      themeToggleButton.innerHTML = '<i class="ri-moon-line"></i>';
+    } else {
+      themeToggleButton.innerHTML = '<i class="ri-sun-line"></i>';
+    }
+  });
+});
