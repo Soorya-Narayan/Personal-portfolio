@@ -6,14 +6,27 @@
   --secondary-color: #ca8a04;
   --text-dark: #1f2937;
   --text-light: #6b7280;
-  --extra-light: #f4f4f4;
+  --extra-light: #ffffff; /* Light mode background */
   --max-width: 1200px;
+  --background-color: #ffffff; /* Default background color for light mode */
+  --text-color: #000000; /* Default text color for light mode */
+  --nav-background-color: var(--extra-light);
 }
+
+[data-theme="dark"] {
+  --background-color: #000000; /* Dark mode background */
+  --text-color: #ffffff; /* Dark mode text color */
+  --nav-background-color: #000000;
+  --primary-color: #ffffff;
+  --secondary-color: #ca8a04;
+}
+
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -22,6 +35,8 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 nav {
@@ -29,19 +44,18 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color: var(--nav-background-color);
   z-index: 99;
 }
 
 .nav__content {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 1rem 1rem; /* Adjust the top and bottom padding */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 nav .logo a {
   font-size: 1.5rem;
@@ -100,7 +114,7 @@ ul li a:hover {
 }
 
 .section {
-  background-color: var(--extra-light);
+  background-color: var(--background-color);
 }
 
 .section__container {
@@ -145,7 +159,7 @@ ul li a:hover {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  color: var(--text-dark);
+  color: var(--text-color);
 }
 
 .contact-info p i {
@@ -167,6 +181,8 @@ ul li a:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .contact-form button {
@@ -220,14 +236,31 @@ ul li a:hover {
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem; /* Adjust spacing between each contact item */
-  }
-  
-  .contact-item img {
-    width: 24px; /* Adjust the width of the icon */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 0.5rem; /* Adjust spacing between icon and text */
-  }
-  
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contact-item img {
+  width: 24px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+nav .theme-toggle {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav .theme-toggle:hover {
+  color: var(--primary-color-dark);
+}
