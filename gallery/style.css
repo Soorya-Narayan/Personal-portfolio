@@ -8,12 +8,27 @@
   --text-light: #6b7280;
   --extra-light: #000000;
   --max-width: 1200px;
+  --background-color: black; /* Default background color */
+  --text-color: white; /* Default text color */
 }
+
+[data-theme="light"] {
+  --background-color: white;
+  --text-color: rgb(255, 255, 255);
+  --extra-light: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #ffffff;
+  --secondary-color: #ca8a04;
+}
+
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -26,8 +41,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black; /* Set background color to black */
-  color: white; /* Set text color to white for better visibility */
+  background-color: var(--background-color);
+  color: var(--text-color);
   scrollbar-width: thin;
   scrollbar-color: #cfc9c5 #383838;
 }
@@ -44,33 +59,33 @@ h1 {
 }
 
 .grid-container div {
-  position: relative; /* Add relative positioning */
+  position: relative;
   width: 150px;
   margin: 0 1.5rem 1.5rem 0;
   display: inline-block;
   width: 100%;
-  border: solid 2px black;
+  border: solid 2px rgba(0, 0, 0, 0.5);
   padding: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden;
 }
 
 .grid-container div p {
-  position: absolute; /* Position the paragraph absolutely */
-  top: 50%; /* Place it at the vertical center */
-  left: 50%; /* Place it at the horizontal center */
-  transform: translate(-50%, -50%); /* Center it perfectly */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
   text-align: center;
   font-style: italic;
-  opacity: 0; /* Initially hide the text */
-  transition: opacity 0.3s ease-in-out; /* Add transition effect */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .grid-container div:hover p {
-  opacity: 1; /* Show the text on hover */
+  opacity: 1;
 }
 
 .grid-container div img {
@@ -88,7 +103,6 @@ h1 {
   border-color: rgb(255, 255, 255);
 }
 
-/* Custom scrollbar styles */
 body::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -109,7 +123,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color: var(--extra-light);
   z-index: 99;
 }
 
@@ -180,7 +194,7 @@ ul li a:hover {
 
 .journal-header {
   text-align: center;
-  flex-grow: 1; /* Takes up remaining space in the navbar */
+  flex-grow: 1;
 }
 
 .journal-header h1 {
@@ -230,4 +244,22 @@ ul li a:hover {
   .action__btns {
     margin: auto;
   }
+}
+
+nav .theme-toggle {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav .theme-toggle:hover {
+  color: var(--primary-color-dark);
 }
