@@ -21,6 +21,7 @@ Check out the live demo of the portfolio [here](https://sooryeah.netlify.app/).
 - Skills section to highlight my expertise.
 - About Me section to provide a brief introduction.
 - Contact form for easy communication.
+- Dark/Light mode.
 
 
 ## Installation
